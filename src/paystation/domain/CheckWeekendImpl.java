@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paystation.domain;
 
+import java.util.Calendar;
+import java.util.Date;
 /**
  *
  * @author dani
  */
-public class CheckWeekendImpl {
+public class CheckWeekendImpl implements CheckWeekend {
+    
+    @Override
+    public boolean isWeekend(){
+        return true;
+    }
     
 }
