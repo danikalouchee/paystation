@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalCoinException {
        
         PayStationImpl ps = new PayStationImpl( new AlternatingRateStrategy(
                                                 new LinearRateStrategy(),
@@ -12,9 +12,9 @@ public class main {
                                                 new CheckWeekendImpl()));
         
         boolean menu = true;
-       
+       int choice;
         while(menu == true) {
-            int choice;
+            
             System.out.println(
                 "Main Menu: Enter a digit for requested action.\n" +
                 "1 = Deposit Coins\n" +
