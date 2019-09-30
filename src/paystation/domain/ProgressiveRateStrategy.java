@@ -20,15 +20,16 @@ public class ProgressiveRateStrategy implements RateStrategy {
         
         // greated than 2 hours
         if(moneyInserted >= 350){
-            time = (moneyInserted-350)/(5+120);
+            time = (moneyInserted-350) / 5 + 120;
         } 
         // between 1st hour and 2nd hour 
         else if(moneyInserted >= 150){
-            time = (moneyInserted-150) * (3/10) + 60;
+            moneyInserted -= 150;
+            time = 60 + moneyInserted / 10 * 3;
         } 
         // less than an hour
         else {
-            time = (moneyInserted *2)/5;
+            time = moneyInserted /5*2;
         }
         return time;
     }
