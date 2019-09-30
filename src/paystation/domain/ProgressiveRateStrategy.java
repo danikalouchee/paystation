@@ -29,7 +29,7 @@ public class ProgressiveRateStrategy implements RateStrategy {
         } 
         // less than an hour
         else {
-            time = moneyInserted /5*2;
+            time = moneyInserted*2/5;
         }
         return time;
     }
