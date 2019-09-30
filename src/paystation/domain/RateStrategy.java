@@ -9,6 +9,6 @@ public interface RateStrategy {
     
     /* Calculate the time based on the money inserted */
     
-    public int calculateTime(int moneyInserted);
+    int calculateTime(int moneyInserted);
     
 }
