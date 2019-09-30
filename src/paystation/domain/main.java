@@ -57,15 +57,12 @@ public class main {
                     } else {
                       switch(strat) {
                           case 1: 
-                              //linear
                               ps.switchStrat(new LinearRateStrategy());
                               break;
                           case 2:
-                              //progressive
                               ps.switchStrat(new ProgressiveRateStrategy());
                               break;
                           case 3:
-                              //alternating
                               ps.switchStrat(new AlternatingRateStrategy(new LinearRateStrategy(),new ProgressiveRateStrategy(), new CheckWeekendImpl()));
                           default:
                               break; 
