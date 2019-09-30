@@ -58,10 +58,13 @@ public class main {
                       switch(strat) {
                           case 1: 
                               //linear
+                              ps.switchStrat(new LinearRateStrategy());
                           case 2:
                               //progress
+                              
                           case 3:
                               //alternating
+                              
                           default:
                               break; 
                       }
