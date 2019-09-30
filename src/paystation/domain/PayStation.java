@@ -73,5 +73,5 @@ public interface PayStation {
      * Changes the current strategy to the new strategy
      * @param newStrat is the strategy to change it to 
      */
-    void switchStrat(RateStrategy newStrat);
+    public void switchStrat(RateStrategy newStrat);
 }
