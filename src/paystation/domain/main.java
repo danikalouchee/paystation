@@ -6,7 +6,10 @@ public class main {
 
     public static void main(String[] args) {
        
-        PayStationImpl ps = new PayStationImpl();
+        PayStationImpl ps = new PayStationImpl( new AlternatingRateStrategy(
+                                                new LinearRateStrategy(),
+                                                new ProgressiveRateStrategy(),
+                                                new CheckWeekendImpl()));
         
         boolean menu = true;
        
@@ -65,7 +68,7 @@ public class main {
                     break;
                 case 5:
                     System.out.println("Please choose a Rate Strategy:");
-                    System.out.println("1 = Linear Rate Strategy (Alphatown)3");
+                    System.out.println("1 = Linear Rate Strategy (Alphatown)");
                     System.out.println("2 = Progressive Rate Strategy (Betatown)");
                     System.out.println("3 = Alternating Rate Strategy (Gammatown)");
                    
@@ -97,6 +100,7 @@ public class main {
                     break;
             }
         }
+        //testing changes 
         System.out.println("Thank you for using our Paystation! Come again!");
        
     }
