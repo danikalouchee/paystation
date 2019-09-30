@@ -6,6 +6,8 @@ public class main {
 
     public static void main(String[] args) {
         
+        PayStationImpl ps = new PayStationImpl();
+        
         boolean menu = true;
         
         while(menu == true) {
@@ -16,7 +18,9 @@ public class main {
                 "2 = Display\n" +
                 "3 = Buy Ticket\n" +
                 "4 = Cancel\n" +
-                "5 = Change Rate Strategy\n" 
+                "5 = Change Rate Strategy\n" +
+                "6 = Leave Paystation/Quit"
+           
             );
             Scanner scan = new Scanner(System.in);
             choice = scan.nextInt();
@@ -29,13 +33,43 @@ public class main {
                     
                     break;
                 case 3:
-                    
+                    Receipt receipt = ps.buy();
+                    System.out.println("Thanks for your purchase. Please take the receipt " + receipt.value());
+                    System.out.print("Do you want to continue? 1 for Yes and 0 for No: ");
+                    int answer = scan.nextInt();
+                    if (answer == 0)
+                        choice = 6;
                     break;
                 case 4:
                     
                     break;
                 case 5: 
+                    System.out.println("Please choose a Rate Strategy:");
+                    System.out.println("1 = Linear Rate Strategy");
+                    System.out.println("2 = Progressive Rate Strategy");
+                    System.out.println("3 = Alternating Rate Strategy");
                     
+                    int strat = scan.nextInt();
+                    
+                    if(strat < 1 || strat > 3) {
+                        System.out.println("Invalid Option, Please enter an existing strategy");
+                        break;
+                    } else {
+                      switch(strat) {
+                          case 1: 
+                              //linear
+                          case 2:
+                              //progress
+                          case 3:
+                              //alternating
+                          default:
+                              break; 
+                      }
+                    }
+                    
+                    
+                    break;
+                case 6: 
                     break;
                 default: 
                     break;
