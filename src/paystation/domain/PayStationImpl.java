@@ -24,11 +24,15 @@ public class PayStationImpl implements PayStation {
     
     private int insertedSoFar;
     private int timeBought;
-    private Map coinMap = new HashMap();
+    private Map<Integer, Integer> coinMap = new HashMap<>();
     private boolean nickleBool = false;
     private boolean dimeBool = false;
     private boolean quarterBool = false;
     private RateStrategy rateStrat;
+    
+    public PayStationImpl(RateStrategy rs){
+        this.rateStrat = rs;
+    }
     
     @Override
     public void addPayment(int coinValue)
@@ -73,7 +77,9 @@ public class PayStationImpl implements PayStation {
                 throw new IllegalCoinException("Invalid coin: " + coinValue);
         }
         insertedSoFar += coinValue;
-        timeBought = insertedSoFar / 5 * 2;
+        timeBought = rateStrat.calculateTime(insertedSoFar);
+
+        
     }
 
     @Override
