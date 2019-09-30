@@ -28,6 +28,7 @@ public class PayStationImpl implements PayStation {
     private boolean nickleBool = false;
     private boolean dimeBool = false;
     private boolean quarterBool = false;
+    private RateStrategy rateStrat;
     
     @Override
     public void addPayment(int coinValue)
@@ -110,5 +111,10 @@ public class PayStationImpl implements PayStation {
         int total = insertedSoFar;
         insertedSoFar = 0;
         return total;
+    }
+    
+    @Override
+    public void switchStrat(RateStrategy newStrat){
+        this.rateStrat = newStrat;
     }
 }

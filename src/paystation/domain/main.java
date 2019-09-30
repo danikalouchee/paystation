@@ -45,9 +45,9 @@ public class main {
                     break;
                 case 5: 
                     System.out.println("Please choose a Rate Strategy:");
-                    System.out.println("1 = Linear Rate Strategy");
-                    System.out.println("2 = Progressive Rate Strategy");
-                    System.out.println("3 = Alternating Rate Strategy");
+                    System.out.println("1 = Linear Rate Strategy (Alphatown)");
+                    System.out.println("2 = Progressive Rate Strategy (Betatown)");
+                    System.out.println("3 = Alternating Rate Strategy (Gammatown)");
                     
                     int strat = scan.nextInt();
                     

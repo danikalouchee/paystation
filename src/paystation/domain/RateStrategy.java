@@ -5,11 +5,9 @@
  */
 package paystation.domain;
 
-/**
- *
- * @author Dumpus
- */
 public interface RateStrategy {
+    
+    /* Calculate the time based on the money inserted */
     
     public int calculateTime(int moneyInserted);
     
