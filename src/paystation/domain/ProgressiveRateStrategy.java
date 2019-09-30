@@ -7,6 +7,13 @@ package paystation.domain;
  */
 public class ProgressiveRateStrategy implements RateStrategy {
     
+    /**
+     * calculates time using progressive strategy
+     * 5 center gives 2 minutes for first hour, 1.5 minutes for second
+     * hour and 1 minute for the third hour
+     * @param moneyInserted is the amount of money inserted in coin value
+     * @return time bought
+     */
     @Override
     public int calculateTime(int moneyInserted){
         int time = 0;
