@@ -18,6 +18,7 @@ public class CheckWeekendImpl implements CheckWeekend {
         
         //get day of week
         int day = cal.get(Calendar.DAY_OF_WEEK);
+        //System.out.println(day);
         //return true if weekend
         return day == Calendar.SATURDAY || day == Calendar.SUNDAY;
     }
