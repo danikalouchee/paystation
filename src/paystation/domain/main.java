@@ -1,4 +1,5 @@
 package paystation.domain;
+import static java.lang.System.exit;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -44,11 +45,11 @@ public class main {
                     break;
                 case 3:
                     Receipt receipt = ps.buy();
-                    System.out.println("Thanks for your purchase. Please take the receipt " + receipt.value());
+                    System.out.println("Here is the reciept: \n" + "Time: " + receipt.value());
                     System.out.print("Do you want to continue? 1 for Yes and 0 for No: ");
                     int answer = scan.nextInt();
                     if (answer == 0)
-                        choice = 6;
+                        exit(0);
                     break;
                 case 4:
                     System.out.println("The current transaction will now be cancelled.");
@@ -59,10 +60,10 @@ public class main {
                         System.out.println("The following coins have been returned: ");
                         System.out.println("Types:");
                         System.out.println("1 = 5 cents");
-                        System.out.println("1 = 10 cents");
-                        System.out.println("1 = 25 cents");
+                        System.out.println("2 = 10 cents");
+                        System.out.println("3 = 25 cents");
                         putCoinsBack.keySet().forEach((coin) -> {
-                            System.out.println("Coin: " + coin  + "Amount of Coins: " + putCoinsBack.get(coin));
+                            System.out.println("Coin: " + coin  + " Amount of Coins: " + putCoinsBack.get(coin));
                 });
                     }
                     break;
