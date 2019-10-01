@@ -86,7 +86,7 @@ public class main {
                               ps.switchStrat(new ProgressiveRateStrategy());
                               break;
                           case 3:
-                              ps.switchStrat(new AlternatingRateStrategy(new LinearRateStrategy(),new ProgressiveRateStrategy(), new CheckWeekendImpl()));
+                              ps.switchStrat(new AlternatingRateStrategy(new ProgressiveRateStrategy(),new LinearRateStrategy(), new CheckWeekendImpl()));
                           default:
                               break;
                       }
